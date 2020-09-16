@@ -53,3 +53,5 @@ HOME_URL=""
 VERSION_CODENAME=focal
 UBUNTU_CODENAME=focal
 EOF
+
+cp -r $PWD/data/* $CHROOT/
