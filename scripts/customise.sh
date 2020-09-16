@@ -14,6 +14,8 @@ export LC_ALL=C
 apt update
 apt upgrade -y --allow-downgrades
 
+apt install -y virtualbox-guest-dkms virtualbox-guest-utils python3 default-jre build-essential
+
 # TODO: You might want to install/purge packages here, or add your PPA.
 # You might want to remove the plymouth branded boot screen too.
 
@@ -53,3 +55,5 @@ HOME_URL=""
 VERSION_CODENAME=focal
 UBUNTU_CODENAME=focal
 EOF
+
+cp -r $PWD/data/* $CHROOT/
