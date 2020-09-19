@@ -14,7 +14,13 @@ export LC_ALL=C
 apt update
 apt upgrade -y --allow-downgrades
 
-apt install -y virtualbox-guest-dkms virtualbox-guest-utils python3 default-jre build-essential
+apt install -y virtualbox-guest-dkms virtualbox-guest-utils python3 default-jre build-essential figlet imagemagick
+
+# Install tiv from source 
+git clone https://github.com/stefanhaustein/TerminalImageViewer.git
+cd TerminalImageViewer/src/main/cpp
+make
+sudo make install
 
 # TODO: You might want to install/purge packages here, or add your PPA.
 # You might want to remove the plymouth branded boot screen too.
