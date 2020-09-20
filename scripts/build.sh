@@ -1,4 +1,5 @@
 # we have to update the manifest file to contain the latest list of packages.
+echo building
 chmod +w $EXTRACT/casper/filesystem.manifest
 proot \
 	-R ${PWD}/${CHROOT}/ \

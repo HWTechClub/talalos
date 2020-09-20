@@ -1,33 +1,35 @@
+echo customising
+export PROOT_NO_SECCOMP=1
 proot \
-	-R ${PWD}/${CHROOT}/ \
+	-r ${PWD}/${CHROOT}/ \
 	-w / \
 	-b /proc/ \
 	-b /dev/ \
 	-b /sys/ \
-	-b /etc/resolv.conf \
+	-0 \
+	/bin/bash
+proot \
+	-r ${PWD}/${CHROOT}/ \
+	-w / \
+	-b /proc/ \
+	-b /dev/ \
+	-b /sys/ \
 	-0 \
 	/bin/bash <<EOF
-
 export HOME=/root
 export LC_ALL=C
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 apt update
 apt upgrade -y --allow-downgrades
 
-apt install -y virtualbox-guest-dkms virtualbox-guest-utils python3 default-jre build-essential git figlet imagemagick ubuntu-make
-
-# Install tiv from source 
-git clone https://github.com/stefanhaustein/TerminalImageViewer.git
-cd TerminalImageViewer/src/main/cpp
-make
-sudo make install
+apt install -y virtualbox-guest-dkms virtualbox-guest-utils python3 default-jre build-essential bluebird-gtk-theme obsidian-icon-theme
 
 # TODO: You might want to install/purge packages here, or add your PPA.
 # You might want to remove the plymouth branded boot screen too.
 
 
 apt autoremove --purge -y
-
 EOF
 
 sed -i -e 's/Xubuntu/'$DIST_NAME'/g' $EXTRACT/isolinux/txt.cfg

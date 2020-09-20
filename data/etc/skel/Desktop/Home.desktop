@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Home
+Comment=
+Exec=/usr/bin/thunar
+Icon=/images/start-menu.png
+Path=~
+Terminal=false
+StartupNotify=false
