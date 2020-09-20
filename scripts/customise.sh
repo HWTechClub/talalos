@@ -14,7 +14,7 @@ export LC_ALL=C
 apt update
 apt upgrade -y --allow-downgrades
 
-apt install -y virtualbox-guest-dkms virtualbox-guest-utils python3 default-jre build-essential figlet imagemagick
+apt install -y virtualbox-guest-dkms virtualbox-guest-utils python3 default-jre build-essential git figlet imagemagick ubuntu-make
 
 # Install tiv from source 
 git clone https://github.com/stefanhaustein/TerminalImageViewer.git
