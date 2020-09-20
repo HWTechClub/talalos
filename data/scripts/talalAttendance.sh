@@ -10,9 +10,9 @@ do
 
 	if [ $time -gt 2 ]
 	then
-		echo "${day},1" >> Attendance.csv
+		echo "${day},1" >> ~/Desktop/Attendance.csv
 	else
-		echo "${day},0.5" >> Attendance.csv
+		echo "${day},0.5" >> ~/Desktop/Attendance.csv
 	fi
 
 	sleep 900
