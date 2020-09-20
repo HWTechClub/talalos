@@ -1,3 +1,4 @@
+echo extracting
 # We make the mount directory and mount the ISO to it
 mkdir $MOUNT $EXTRACT
 mount -o loop $ORIG_FILE $MOUNT
