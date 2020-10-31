@@ -116,11 +116,5 @@ elif [ -f /etc/bash_completion ]; then
 fi
 fi
 
-#Print's talal OS
-figlet -t TALAL OS
-
-#Print talal's famous quote
-tiv /images/talal-vr.jpeg
-
 echo "'What do you do when you are bored determines who you are'"
 
