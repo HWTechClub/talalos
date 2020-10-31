@@ -11,7 +11,8 @@ proot \
 	dpkg-query -W --showformat='${Package} ${Version}\n' > $EXTRACT/casper/filesystem.manifest
 cp $EXTRACT/casper/filesystem.manifest $EXTRACT/casper/filesystem.manifest-desktop
 # we have to make a new squashfs compressed filesystem based on the changes we did
-mksquashfs $CHROOT $EXTRACT/casper/filesystem.squashfs
+# -comp xz
+mksquashfs $CHROOT $EXTRACT/casper/filesystem.squashfs -b 1048576 -comp xz -Xdict-size 100%
 # we put the size of the filesystem for casper
 printf $(du -sx --block-size=1 edit | cut -f1) > $EXTRACT/casper/filesystem.size
 # we also have to update the md5sum list of the files

@@ -1,7 +1,8 @@
 #!/bin/sh
+set -e
 
 # We define the global variables
-BASEDIR=`pwd` # this is the base working directory, in case we need to go back to it
+BASEDIR=$(pwd) # this is the base working directory, in case we need to go back to it
 MOUNT="mnt" # this is the mount directory for the ISO file
 EXTRACT="extract-cd" # this is where the ISO will be extracted to
 CHROOT="edit" # this is where the root partition (squashfs) will be extracted to

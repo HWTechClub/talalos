@@ -2,3 +2,5 @@ edit/
 extract-cd/
 mnt/
 *.iso
+*.xz
+*.zip
